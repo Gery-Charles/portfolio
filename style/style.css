@@ -1,60 +1,64 @@
 body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #82aba1;
-color: #333;
+    background-color: #222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 header {
-color: white;
-padding: 2rem;
-margin-bottom: 2rem;
-text-align: center;
+    color: black;
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.container{
+    background-color: #82aba1;
+    display: flex;
 }
 
 section {
-padding: 2rem;
-max-width: 900px;
-margin: auto;
-margin-bottom: 1rem;
-border-radius: 8px;
-border: 5px double white;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    margin: 1rem;
+    border-radius: 8px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h2 {
-border-bottom: 2px solid #004080;
-padding-bottom: 0.5rem;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 0.5rem;
 }
 
 ul {
-list-style-type: none;
-padding-left: 0;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 ul li::before {
-content: "✓ ";
-color: #004080;
+    content: "✓ ";
+    color: #004080;
 }
 
 .project a {
-display: inline-block;
-margin-top: 0.5rem;
-color: #004080;
-text-decoration: none;
-font-weight: bold;
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #004080;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .project a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 footer {
-background-color: #222;
-color: #ccc;
-text-align: center;
-padding: 1rem;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
 }
 
 @media (max-width: 600px) {
