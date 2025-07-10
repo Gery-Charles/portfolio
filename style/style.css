@@ -1,5 +1,5 @@
 :root {
---primary-color: #004080;
+--primary-color: #004b97;
 --accent-color: #0077cc;
 --bg-color: #f4f4f4;
 --text-color: #333;
@@ -16,7 +16,7 @@ line-height: 1.6;
 }
 
 header {
-background: linear-gradient(90deg, var(--primary-color), #0059b3);
+background: linear-gradient(90deg, var(--primary-color), #5c9edf);
 color: var(--white);
 padding: 3rem 1rem;
 text-align: center;
@@ -40,6 +40,12 @@ h2 {
 border-left: 5px solid var(--primary-color);
 padding-left: 1rem;
 font-size: 1.5rem;
+transition: 1s;
+}
+
+h2:hover {
+    font-size: 2rem;
+    transition: 1s;
 }
 
 ul.skills {
