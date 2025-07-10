@@ -1,68 +1,94 @@
+:root {
+--primary-color: #004080;
+--accent-color: #0077cc;
+--bg-color: #f4f4f4;
+--text-color: #333;
+--white: #ffffff;
+}
+
 body {
-    background-color: #222;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
+font-family: 'Inter', sans-serif;
+margin: 0;
+padding: 0;
+background-color: var(--bg-color);
+color: var(--text-color);
+line-height: 1.6;
 }
 
 header {
-    color: black;
-    background-color: white;
-    padding: 1rem;
-    text-align: center;
+background: linear-gradient(90deg, var(--primary-color), #0059b3);
+color: var(--white);
+padding: 3rem 1rem;
+text-align: center;
 }
 
-.container{
-    background-color: #82aba1;
-    display: flex;
+header h1 {
+margin-bottom: 0.5rem;
+font-size: 2.5rem;
 }
 
 section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-    margin: 1rem;
-    border-radius: 8px;
-    border: 2px solid white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+padding: 2rem;
+max-width: 900px;
+margin: 2rem auto;
+background-color: var(--white);
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 h2 {
-    border-bottom: 2px solid #004080;
-    padding-bottom: 0.5rem;
+border-left: 5px solid var(--primary-color);
+padding-left: 1rem;
+font-size: 1.5rem;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 0;
+ul.skills {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+list-style: none;
+padding: 0;
 }
 
-ul li::before {
-    content: "✓ ";
-    color: #004080;
+ul.skills li {
+background-color: var(--primary-color);
+color: var(--white);
+padding: 0.5rem 1rem;
+border-radius: 20px;
+font-size: 0.9rem;
 }
 
 .project a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #004080;
-    text-decoration: none;
-    font-weight: bold;
+display: inline-block;
+margin-top: 1rem;
+color: var(--accent-color);
+text-decoration: none;
+font-weight: 600;
+border: 1px solid var(--accent-color);
+padding: 0.4rem 1rem;
+border-radius: 4px;
+transition: background-color 0.3s, color 0.3s;
 }
 
 .project a:hover {
-    text-decoration: underline;
+background-color: var(--accent-color);
+color: var(--white);
 }
 
 footer {
-    color: #ccc;
-    text-align: center;
-    padding: 1rem;
+background-color: #1a1a1a;
+color: #ccc;
+text-align: center;
+padding: 1.5rem 1rem;
+font-size: 0.9rem;
 }
 
 @media (max-width: 600px) {
 section {
     padding: 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
 }
 }
