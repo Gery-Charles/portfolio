@@ -6,6 +6,7 @@
   <title>Gery | Portfolio</title>
   <link rel="stylesheet" href="style/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
   <header>
@@ -24,7 +25,7 @@
         Je suis motivé à apprendre constamment et à relever des défis techniques pour progresser dans mon parcours professionnel.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" data-aos="fade-up">
       <h2>Compétences</h2>
       <ul class="skills">
         <li>Java</li>
@@ -36,22 +37,22 @@
       </ul>
     </section>
 
-    <section id="projects">
+    <section id="projects" data-aos="fade-right">
       <h2>Projets</h2>
-      <div class="project">
+      <div class="project" data-aos="flip-up">
         <h3>FreelanceConnect</h3>
         <p>Plateforme permettant aux clients et freelances d'entrer en contact, publier et postuler à des missions.</p>
         <a href="https://github.com/Gery-Charles" target="_blank">Voir sur GitHub</a>
       </div>
 
-      <div class="project">
+      <div class="project" data-aos="flip-up">
         <h3>LocABoat</h3>
         <p>Plateforme de location de bateau.</p>
         <a href="https://github.com/Gery-Charles" target="_blank">Voir sur GitHub</a>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-aos="fade-left">
       <h2>Contact</h2>
       <p>Email : <a href="mailto:charles.gery@etudiant.univ-lr.fr">charles.gery@etudiant.univ-lr.fr</a></p>
       <p>LinkedIn : <a href="https://www.linkedin.com/in/charles-gery" target="_blank">charles-gery</a></p>
@@ -62,5 +63,11 @@
   <footer>
     <p>&copy; 2025 Gery - Portfolio</p>
   </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
 </body>
 </html>
