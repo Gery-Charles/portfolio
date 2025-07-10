@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gery | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Gery Charles</h1>
+    <p>Etudiant en 3ème année de licence informatique à l'Université de La Rochelle</p>
+  </header>
+
+  <section id="about">
+    <h2>À propos</h2>
+    <p>Je suis passionné par le développement web et logiciel. En dehors de l'informatique, j'aime le sport, le bateau et la moto.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Compétences</h2>
+    <ul>
+      <li>Java</li>
+      <li>Symfony</li>
+      <li>Twig</li>
+      <li>POO</li>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projets</h2>
+    <div class="project">
+      <h3>FreelanceConnect</h3>
+      <p>Plateforme permettant aux clients et freelances d'entrer en contact, publier et postuler à des missions.</p>
+      <a href="https://github.com/Gery-Charles" target="_blank">Voir sur GitHub</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:charles.gery@etudiant.univ-lr.fr">charles.gery@etudiant.univ-lr.fr</a></p>
+    <p>LinkedIn : <a href="https://www.linkedin.com/in/charles-gery" target="_blank">charles-gery</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Gery - Portfolio personnel</p>
+  </footer>
+</body>
+</html>
+
+<!-- style.css -->
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  header {
+    background-color: #004080;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    border-bottom: 2px solid #004080;
+    padding-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  ul li::before {
+    content: "✓ ";
+    color: #004080;
+  }
+
+  .project a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #004080;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .project a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    section {
+      padding: 1rem;
+    }
+  }
+</style>
