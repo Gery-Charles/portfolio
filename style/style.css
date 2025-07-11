@@ -7,6 +7,7 @@
 }
 
 body {
+transition: 1.5s;
 font-family: 'Inter', sans-serif;
 margin: 0;
 padding: 0;
@@ -95,6 +96,49 @@ text-align: center;
 padding: 1.5rem 1rem;
 font-size: 0.9rem;
 }
+
+/* Bouton thème */
+#theme-toggle {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff55;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #222;
+}
+
+#theme-toggle:hover {
+  background-color: #ffffff88;
+}
+
+/* Thème sombre */
+.dark-theme {
+  transition: 1.5s;
+  background-color: #1a1a1a;
+  color: #eee;
+}
+
+.dark-theme header {
+  background-color: #003366;
+  color: #fff;
+}
+
+.dark-theme section {
+  background-color: #2a2a2a;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme footer {
+  background-color: #111;
+  color: #aaa;
+}
+
+.dark-theme a {
+  color: #7db4ff;
+}
+
 
 @media (max-width: 600px) {
 section {
