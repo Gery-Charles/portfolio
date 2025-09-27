@@ -8,7 +8,7 @@ console.log("js présent...")
 
   function applyTheme(theme) {
     document.body.classList.toggle("dark-theme", theme === "dark");
-    toggle.textContent = theme === "dark" ? "☀️ Mode clair" : "🌙 Mode sombre";
+    toggle.textContent = theme === "dark" ? "☀️" : "🌙";
   }
 
   applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
@@ -16,5 +16,5 @@ console.log("js présent...")
   toggle.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-theme");
     localStorage.setItem("theme", isDark ? "dark" : "light");
-    toggle.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+    toggle.textContent = isDark ? "☀️" : "🌙";
   });
