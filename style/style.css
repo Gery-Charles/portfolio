@@ -235,4 +235,22 @@ font-size: 0.9rem;
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
   }
+
+  .timeline {
+    padding-left: 0; /* Supprimer le décalage */
+    margin-left: 0;
+  }
+
+  .timeline-item {
+    padding-left: 1rem; /* Petit retrait */
+  }
+
+
+  .timeline-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.9rem;
+  }
 }
