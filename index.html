@@ -1,36 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  
+  <!-- SEO -->
+  <meta name="description" content="Portfolio de Gery Charles - Étudiant en Licence Informatique spécialisé en développement web et logiciel. Symfony, PHP, Java.">
+  <meta name="keywords" content="développeur, informatique, Symfony, PHP, portfolio, La Rochelle">
+  <meta name="author" content="Gery Charles">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gery Charles - Portfolio Développeur">
+  <meta property="og:description" content="Étudiant en Licence Informatique | Développement Web & Logiciel">
+  <meta property="og:type" content="website">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gery | Portfolio</title>
   <link rel="stylesheet" href="style/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="comportement/main.js" defer></script>
 </head>
+
+
 <body>
+  <!-- Header Hero -->
   <header>
-    <h1>Gery Charles</h1>
-    <p>Étudiant en 3e année de Licence Informatique | Développement Web & Logiciel | Passionné par les projets numériques</p>
-    <button id="theme-toggle">🌙 Mode sombre</button>
+    <div class="hero-content">
+      <div class="hero-text">
+        <!--<img src="images/FreelanceConnect.png" alt="Photo de Gery Charles" class="profile-photo">-->
+        <h1>Gery Charles</h1>
+        <p>Étudiant en Licence Informatique</p>
+      </div>
+      <button id="theme-toggle"></button>
+    </div>
   </header>
 
+  <!-- Navigation sticky -->
+  <nav class="sticky-nav">
+    <a href="#about">À propos</a>
+    <a href="#education">Formation</a>
+    <a href="#skills">Compétences</a>
+    <a href="#projects">Projets</a>
+    <a href="#github">GitHub</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <main>
-    <section id="about">
-    <h2>À propos de moi</h2>
+    <!-- À propos -->
+    <section id="about" data-aos="fade-up">
+      <h2>À propos de moi</h2>
       <p>
         Passionné par le <strong>développement web</strong> et <strong>logiciel</strong>, je conçois des applications fonctionnelles et intuitives. 
-        Mon parcours m’a permis d’acquérir des bases solides en <strong>programmation (Java, PHP, POO)</strong>, 
+        Mon parcours m'a permis d'acquérir des bases solides en <strong>programmation (Java, PHP, POO)</strong>, 
         <strong>bases de données</strong>, <strong>algorithmique</strong> et <strong>systèmes informatiques</strong>.
-        <br><br>
-        
+      </p>
+      <p>
         Mon objectif : continuer à progresser, relever des défis techniques et contribuer à des projets innovants.
       </p>
+      
+      <div class="learning-box">
+        <h3>🚀 En ce moment j'apprends...</h3>
+        <p>Approfondissement en <strong>traitement du signal</strong> avec MATLAB, exploration de <strong>React.js</strong> et amélioration continue de mes compétences en <strong>algorithmique</strong>.</p>
+      </div>
     </section>
 
-
+    <!-- Formation -->
     <section id="education" data-aos="fade-up">
       <h2>Formation</h2>
       <div class="timeline">
@@ -38,6 +71,7 @@
           <h3>Licence Informatique - 3e année</h3>
           <p><strong>Université de La Rochelle</strong> | 2022 - 2026</p>
           <p>Parcours développement web en 2ème année puis traitement du signal pour les objets intelligents en 3ème année.</p>
+          <p><em>Compétences acquises : Travail en équipe sur des projets complexes, méthodologie Agile,...</em></p>
           <div class="badge-container">
             <span class="badge">POO</span>
             <span class="badge">Algorithmique</span>
@@ -56,11 +90,11 @@
       </div>
     </section>
 
-
+    <!-- Compétences -->
     <section id="skills" data-aos="fade-up">
-      <h2>Compétences</h2>
+      <h2>Compétences techniques</h2>
       <ul class="skills">
-        <li>💻 Programmation : Java, PHP, POO, Python (bases)</li>
+        <li>💻 Programmation : Java, PHP, POO, Python</li>
         <li>📊 Traitement du signal : MATLAB</li>
         <li>🌐 Développement web : Symfony, Twig, HTML, CSS, JavaScript</li>
         <li>🗄️ Bases de données : SQL, conception et modélisation</li>
@@ -71,60 +105,134 @@
       </ul>
     </section>
 
-    <section id="skills" data-aos="fade-up">
-      <h2>Qualités professionnelles</h2>
-      <ul class="skills">
-        <li>🤝 Travail en équipe</li>
-        <li>🎯 Résolution de problèmes</li>
-        <li>📚 Apprentissage autonome</li>
-        <li>⏰ Gestion du temps</li>
-        <li>💡 Curiosité technique</li>
-        <li>🔍 Attention aux détails</li>
-      </ul>
+    <!-- Projets -->
+    <section id="projects" data-aos="fade-right">
+      <h2>Projets réalisés</h2>
+
+      <div class="projects-grid">
+        <!-- Projet 1 -->
+        <div class="project" data-aos="zoom-in">
+          <img src="images/FreelanceConnect.png" alt="Aperçu du projet FreelanceConnect">
+          <h3>🚢 FreelanceConnect</h3>
+          
+          <div class="project-meta">
+            <span>🎓 Projet académique</span>
+            <span>🌐 Symfony</span>
+
+          </div>
+          
+          <p>
+            Plateforme web complète permettant aux clients et freelances d'entrer en contact, publier et postuler à des missions professionnelles.
+          </p>
+          
+          <div class="project-features">
+            <strong>Fonctionnalités clés :</strong>
+            <ul>
+              <li>Système d'authentification sécurisé avec hashage des mots de passe</li>
+              <li>Gestion complète des profils utilisateurs (clients et freelances)</li>
+              <li>Publication et recherche de missions avec filtres avancés</li>
+              <li>Interface d'administration pour la modération</li>
+            </ul>
+          </div>
+          
+          <p><strong>Technologies :</strong> Symfony, PHP, Twig, MySQL, Bootstrap</p>
+          
+          <p><strong>Défis relevés :</strong> Optimisation des requêtes SQL pour améliorer les performances, gestion des relations complexes entre entités.</p>
+          
+          <a href="https://github.com/Gery-Charles/FreelanceConnect" target="_blank" class="btn">Voir sur GitHub →</a>
+        </div>
+
+        <!-- Projet 2 -->
+        <div class="project" data-aos="zoom-in">
+          <img src="images/devDurable.png" alt="Aperçu du projet Dev Durable">
+          <h3>⛵ Dev Durable</h3>
+          
+          <div class="project-meta">
+            <span>🎓 Projet académique</span>
+            <span>🌱 Éco-responsable</span>
+          </div>
+          
+          <p>
+            Application web géolocalisée permettant de découvrir les stations de vélo et de bus à proximité pour encourager la mobilité durable.
+          </p>
+          
+          <div class="project-features">
+            <strong>Fonctionnalités clés :</strong>
+            <ul>
+              <li>Géolocalisation en temps réel de l'utilisateur</li>
+              <li>Affichage des stations sur une carte interactive</li>
+              <li>Intégration d'API REST pour les données de transport</li>
+              <li>Interface responsive adaptée mobile</li>
+            </ul>
+          </div>
+          
+          <p><strong>Technologies :</strong> JavaScript vanilla, API REST, HTML5, CSS3, Leaflet.js</p>
+          
+          <p><strong>Défis relevés :</strong> Manipulation d'API REST externes, gestion asynchrone des données (fetch, promises), optimisation des performances pour l'affichage de nombreux marqueurs sur la carte.</p>
+          
+          <a href="https://github.com/Gery-Charles/dev_durable" target="_blank" class="btn">Voir sur GitHub →</a>
+        </div>
+      </div>
     </section>
 
-
-<section id="projects" data-aos="fade-right">
-  <h2>Projets</h2>
-
-  <div class="projects-grid">
-    <div class="project" data-aos="flip-up">
-      <img src="images/FreelanceConnect.png" alt="Aperçu du projet FreelanceConnect">
-      <h3>FreelanceConnect</h3>
-      <p>
-        Plateforme web permettant aux clients et freelances d'entrer en contact, publier et postuler à des missions. 
-        <br>
-        <strong>Technos :</strong> Symfony, PHP, Twig, MySQL.
+    <!-- GitHub Stats -->
+    <section id="github" data-aos="fade-up">
+      <h2>Activité GitHub</h2>
+      <div class="github-stats">
+        <img src="https://github-readme-stats.vercel.app/api?username=Gery-Charles&show_icons=true&theme=tokyonight&hide_border=true&locale=fr" alt="Statistiques GitHub">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gery-Charles&layout=compact&theme=tokyonight&hide_border=true&locale=fr" alt="Langages les plus utilisés">
+      </div>
+      <p style="text-align: center; margin-top: 1rem;">
+        <a href="https://github.com/Gery-Charles" target="_blank" style="color: var(--accent-color); font-weight: 600;">Voir mon profil GitHub complet →</a>
       </p>
-      <a href="https://github.com/Gery-Charles/FreelanceConnect" target="_blank" class="btn">Voir sur GitHub</a>
-    </div>
+    </section>
 
-    <div class="project" data-aos="flip-up">
-      <img src="images/devDurable.png" alt="Aperçu du projet LocABoat">
-      <h3>Dev durable</h3>
-      <p>
-        Plateforme web permettant à l'utilisateur de découvrir les stations de vélo et de bus autour de lui pour favoriser le développement durable.
-        <br>
-        <strong>Technos :</strong> API REST, JavaScript, HTML, CSS.
-      </p>
-      <a href="https://github.com/Gery-Charles/dev_durable" target="_blank" class="btn">Voir sur GitHub</a>
-    </div>
-  </div>
-</section>
+    <!-- Centres d'intérêt -->
+    <section id="interests" data-aos="fade-left">
+      <h2>Centres d'intérêt</h2>
+      <div class="interests">
+        <div class="interest-item">
+          🚤
+          <span>Nautisme</span>
+        </div>
+        <div class="interest-item">
+          🏍️
+          <span>Moto</span>
+        </div>
+        <div class="interest-item">
+          🏔️
+          <span>Randonnée</span>
+        </div>
+        <div class="interest-item">
+          🏃
+          <span>Sport</span>
+        </div>
+      </div>
+    </section>
 
+    <!-- CTA -->
+    <section class="cta-section" data-aos="zoom-in">
+      <h2>Intéressé par mon profil ?</h2>
+      <p style="font-size: 1.1rem;">Je suis disponible pour un stage à partir d'avril 2026</p>
+      <a href="mailto:charles.gery@etudiant.univ-lr.fr" class="cta-btn">📧 Me contacter</a>
+      <!-- Ajoutez votre CV ici -->
+      <!-- <a href="CV_Gery_Charles.pdf" download class="cta-btn" style="margin-left: 1rem;">📄 Télécharger mon CV</a> -->
+    </section>
 
-
+    <!-- Contact -->
     <section id="contact" data-aos="fade-left">
       <h2>Contact</h2>
-      <p>Email : <a href="mailto:charles.gery@etudiant.univ-lr.fr">charles.gery@etudiant.univ-lr.fr</a></p>
-      <p>LinkedIn : <a href="https://www.linkedin.com/in/charles-gery" target="_blank">Gery-Charles (LinkedIn)</a></p>
-      <p>GitHub : <a href="https://github.com/Gery-Charles" target="_blank">Gery-Charles (GitHub)</a></p>
-      <p>Disponible pour un stage <strong>à partir d'avril 2026</strong>.</p>
+      <p>📧 Email : <a href="mailto:charles.gery@etudiant.univ-lr.fr">charles.gery@etudiant.univ-lr.fr</a></p>
+      <p>💼 LinkedIn : <a href="https://www.linkedin.com/in/charles-gery" target="_blank">Gery Charles</a></p>
+      <p>💻 GitHub : <a href="https://github.com/Gery-Charles" target="_blank">Gery-Charles</a></p>
     </section>
   </main>
 
+  <!-- Bouton scroll to top -->
+  <button id="scroll-top" title="Retour en haut">↑</button>
+
   <footer>
-    <p>&copy; 2025 Gery - Portfolio</p>
+    <p>&copy; 2025 Gery Charles - Portfolio</p>
   </footer>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

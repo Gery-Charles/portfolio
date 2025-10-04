@@ -1,11 +1,11 @@
 :root {
   --primary-color: #6D28D9;   /* Violet profond */
   --accent-color: #3B82F6;   /* Bleu clair moderne */
+  --light-accent-color: #619bf9;   /* Bleu clair plus doux */
   --bg-color: #f4f4f4;       /* Fond clair doux */
   --text-color: #333;
   --white: #ffffff;
 }
-
 
 body {
 transition: 1s;
@@ -22,7 +22,6 @@ header {
   color: var(--white);
   padding: 1rem 1rem;
   text-align: center;
-  display: flex;
   justify-content: space-between; 
   align-items: center;
   flex-wrap: wrap;            
@@ -35,13 +34,19 @@ header h1 {
   font-size: 2.5rem;
 }
 
-section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  background-color: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+/* Bouton thème */
+#theme-toggle {
+  padding: 0.5rem 1rem;
+  background-color: #ffffff55;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #222;
+}
+
+#theme-toggle:hover {
+  background-color: #ffffff88;
 }
 
 h2 {
@@ -65,7 +70,69 @@ h2:hover::after {
   width: 100%;
 }
 
+/* Navigation sticky */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+  transition: all 0.3s;
+}
 
+.sticky-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.sticky-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s;
+}
+
+.sticky-nav a:hover::after {
+  width: 100%;
+}
+
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Box apprentissage */
+.learning-box {
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px dashed var(--primary-color);
+  margin-top: 1.5rem;
+}
+
+.learning-box h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* Timeline */
 .timeline {
   position: relative;
   padding-left: 2rem;
@@ -127,7 +194,6 @@ h2:hover::after {
   font-size: 0.85rem;
 }
 
-
 ul.skills {
 display: flex;
 flex-wrap: wrap;
@@ -149,6 +215,7 @@ ul.skills li:hover {
   background-color: var(--accent-color);
 }
 
+/* Projets */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -160,7 +227,6 @@ ul.skills li:hover {
   padding: 1.5rem;
   border-radius: 20px;
   border: 1px solid var(--primary-color);
-  background: var(--card-bg, #111);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -174,6 +240,38 @@ ul.skills li:hover {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 1rem;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.project-meta span {
+  background: var(--light-accent-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  color: var(--text-color, #eee);
+  font-weight: 600;
+}
+
+.project-features {
+  margin: 1rem 0;
+}
+
+.project-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-features li::before {
+  content: "✓ ";
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
 
 .btn {
@@ -192,7 +290,6 @@ ul.skills li:hover {
   background-color: darken(var(--accent-color), 10%);
 }
 
-
 footer {
 background-color: #1a1a1a;
 color: #ccc;
@@ -201,44 +298,220 @@ padding: 1.5rem 1rem;
 font-size: 0.9rem;
 }
 
-/* Bouton thème */
-#theme-toggle {
-  padding: 0.5rem 1rem;
-  background-color: #ffffff55;
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  min-width: 300px;
+}
+
+.hero-text p {
+  padding-top: 1.5rem;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  background-color: var(--bg-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: 5rem;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+
+/* GitHub stats */
+.github-stats {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.github-stats img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-section h2::after {
+  display: none;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: white;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  margin-top: 1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Bouton scroll to top */
+#scroll-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
   cursor: pointer;
-  font-size: 1rem;
-  color: #222;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+  z-index: 1000;
 }
 
-#theme-toggle:hover {
-  background-color: #ffffff88;
+#scroll-top:hover {
+  background: var(--accent-color);
+  transform: scale(1.1);
 }
 
-/* Thème sombre */
+/* Améliorations hover projets */
+.project {
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(109, 40, 217, 0.3);
+}
+
+/* Centres d'intérêt */
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.interest-item {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.interest-item span {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--text-color);
+}
+
+/* THÈME SOMBRE */
 .dark-theme {
   transition: 1s;
   background-color: #1a1a1a;
   color: #eee;
 }
 
+/* Thème sombre pour la navigation sticky */
+.dark-theme .sticky-nav {
+  background: #2a2a2a;
+}
 
+/* Thème sombre pour les sections */
 .dark-theme section {
   background-color: #2a2a2a;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
+/* Thème sombre pour la box apprentissage */
+.dark-theme .learning-box {
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+  border-color: var(--accent-color);
+}
 
+.dark-theme .learning-box h3 {
+  color: var(--accent-color);
+}
+
+/* Thème sombre pour les projets */
+.dark-theme .project-meta span {
+  background: rgba(109, 40, 217, 0.3);
+  color: var(--accent-color);
+}
+
+/* Thème sombre pour le pied de page */
 .dark-theme footer {
   background-color: #111;
   color: #aaa;
 }
 
+/* Thème sombre pour les liens */
 .dark-theme a {
   color: #7db4ff;
 }
 
+.dark-theme .interest-item span {
+  color: var(--bg-color);
+}
+
+/* Redimensionnement et ajustements pour les petits écrans */
+@media (max-width: 768px) {
+  .sticky-nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .sticky-nav a {
+    font-size: 0.9rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 600px) {
   section {
