@@ -82,6 +82,8 @@ h2:hover::after {
   gap: 2rem;
   z-index: 1000;
   transition: all 0.3s;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sticky-nav a {
