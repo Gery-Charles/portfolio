@@ -1,6 +1,3 @@
-console.log("js présent...")
-
-
 /* MODE CLAIR/SOMBRE */
   const toggle = document.getElementById("theme-toggle");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
