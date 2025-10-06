@@ -19,29 +19,46 @@ console.log("js présent...")
     toggle.textContent = isDark ? "☀️" : "🌙";
   });
 
-  // Bouton scroll to top
-    const scrollTopBtn = document.getElementById('scroll-top');
+// Bouton scroll to top
+  const scrollTopBtn = document.getElementById('scroll-top');
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollTopBtn.style.display = 'block';
-      } else {
-        scrollTopBtn.style.display = 'none';
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.style.display = 'block';
+    } else {
+      scrollTopBtn.style.display = 'none';
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+// Smooth scroll pour la navigation
+  document.querySelectorAll('.sticky-nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
+  });
 
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Smooth scroll pour la navigation
-    document.querySelectorAll('.sticky-nav a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
+// Fonction pour gérer l'accordéon des projets
+function toggleProjectDetails(button) {
+  const project = button.closest('.project');
+  const details = project.querySelector('.project-details');
+  
+  // Toggle la classe expanded
+  details.classList.toggle('expanded');
+  button.classList.toggle('active');
+  
+  // Changer le texte du bouton
+  if (details.classList.contains('expanded')) {
+    button.textContent = 'Voir moins';
+  } else {
+    button.textContent = 'En savoir plus';
+  }
+}

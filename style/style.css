@@ -239,7 +239,9 @@ ul.skills li:hover {
 }
 
 .project img {
+  object-fit: cover;
   width: 100%;
+  height: 300px;
   border-radius: 12px;
   margin-bottom: 1rem;
 }
@@ -276,8 +278,51 @@ ul.skills li:hover {
   margin-right: 0.5rem;
 }
 
+.project-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.project-details.expanded {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.toggle-details {
+  background: transparent;
+  border: none;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-details:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.toggle-details::after {
+  content: '▼';
+  font-size: 0.7rem;
+  transition: transform 0.3s;
+}
+
+.toggle-details.active::after {
+  transform: rotate(180deg);
+}
+
 .btn {
-  display: inline-block;
   margin-top: 1rem;
   color: var(--white);
   background-color: var(--accent-color);
@@ -293,12 +338,20 @@ ul.skills li:hover {
 }
 
 footer {
-background-color: #1a1a1a;
-color: #ccc;
-text-align: center;
-padding: 1.5rem 1rem;
-font-size: 0.9rem;
+  background-color: #1a1a1a;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.9rem;
 }
+
+.footer-content {
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20rem 0 20rem;
+}
+
 
 .hero-content {
   display: flex;
@@ -347,18 +400,6 @@ font-size: 0.9rem;
   margin-right: 1rem;
 }
 
-/* GitHub stats */
-.github-stats {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.github-stats img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 0.5rem;
-}
 
 /* CTA Section */
 .cta-section {
@@ -419,16 +460,6 @@ font-size: 0.9rem;
 #scroll-top:hover {
   background: var(--accent-color);
   transform: scale(1.1);
-}
-
-/* Améliorations hover projets */
-.project {
-  transition: all 0.3s ease;
-}
-
-.project:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(109, 40, 217, 0.3);
 }
 
 /* Centres d'intérêt */

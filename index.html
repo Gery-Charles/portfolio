@@ -42,7 +42,6 @@
     <a href="#education">Formation</a>
     <a href="#skills">Compétences</a>
     <a href="#projects">Projets</a>
-    <a href="#github">GitHub</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -120,28 +119,32 @@
           <div class="project-meta">
             <span>🎓 Projet académique</span>
             <span>🌐 Symfony</span>
-
           </div>
           
-          <p>
+          <p class="project-summary">
             Plateforme web complète permettant aux clients et freelances d'entrer en contact, publier et postuler à des missions professionnelles.
           </p>
+
+          <button class="toggle-details" onclick="toggleProjectDetails(this)">En savoir plus</button>
           
-          <div class="project-features">
-            <strong>Fonctionnalités clés :</strong>
-            <ul>
-              <li>Système d'authentification sécurisé avec hashage des mots de passe</li>
-              <li>Gestion complète des profils utilisateurs (clients et freelances)</li>
-              <li>Publication et recherche de missions avec filtres avancés</li>
-              <li>Interface d'administration pour la modération</li>
-            </ul>
+          <div class="project-details">
+            <div class="project-features">
+              <strong>Fonctionnalités clés :</strong>
+              <ul>
+                <li>Système d'authentification sécurisé avec hashage des mots de passe</li>
+                <li>Gestion complète des profils utilisateurs (clients et freelances)</li>
+                <li>Publication et recherche de missions avec filtres avancés</li>
+                <li>Interface d'administration pour la modération</li>
+              </ul>
+            </div>
+            
+            <p><strong>Technologies :</strong> Symfony, PHP, Twig, MySQL, Bootstrap</p>
+            
+            <p><strong>Défis relevés :</strong> Optimisation des requêtes SQL pour améliorer les performances, gestion des relations complexes entre entités.</p>
+                    
+            <a href="https://github.com/Gery-Charles/FreelanceConnect" target="_blank" class="btn">Voir sur GitHub →</a>
           </div>
-          
-          <p><strong>Technologies :</strong> Symfony, PHP, Twig, MySQL, Bootstrap</p>
-          
-          <p><strong>Défis relevés :</strong> Optimisation des requêtes SQL pour améliorer les performances, gestion des relations complexes entre entités.</p>
-          
-          <a href="https://github.com/Gery-Charles/FreelanceConnect" target="_blank" class="btn">Voir sur GitHub →</a>
+
         </div>
 
         <!-- Projet 2 -->
@@ -154,40 +157,34 @@
             <span>🌱 Éco-responsable</span>
           </div>
           
-          <p>
+          <p class="project-summary">
             Application web géolocalisée permettant de découvrir les stations de vélo et de bus à proximité pour encourager la mobilité durable.
           </p>
+
+          <button class="toggle-details" onclick="toggleProjectDetails(this)">En savoir plus</button>
           
-          <div class="project-features">
-            <strong>Fonctionnalités clés :</strong>
-            <ul>
-              <li>Géolocalisation en temps réel de l'utilisateur</li>
-              <li>Affichage des stations sur une carte interactive</li>
-              <li>Intégration d'API REST pour les données de transport</li>
-              <li>Interface responsive adaptée mobile</li>
-            </ul>
+          <div class="project-details">
+            <div class="project-features">
+              <strong>Fonctionnalités clés :</strong>
+              <ul>
+                <li>Géolocalisation en temps réel de l'utilisateur</li>
+                <li>Affichage des stations sur une carte interactive</li>
+                <li>Intégration d'API REST pour les données de transport</li>
+                <li>Interface responsive adaptée mobile</li>
+              </ul>
+            </div>
+            
+            <p><strong>Technologies :</strong> JavaScript vanilla, API REST, HTML5, CSS3, Leaflet.js</p>
+            
+            <p><strong>Défis relevés :</strong> Manipulation d'API REST externes, gestion asynchrone des données (fetch, promises), optimisation des performances pour l'affichage de nombreux marqueurs sur la carte.</p>
+          
+            <a href="https://github.com/Gery-Charles/dev_durable" target="_blank" class="btn">Voir sur GitHub →</a>
           </div>
           
-          <p><strong>Technologies :</strong> JavaScript vanilla, API REST, HTML5, CSS3, Leaflet.js</p>
-          
-          <p><strong>Défis relevés :</strong> Manipulation d'API REST externes, gestion asynchrone des données (fetch, promises), optimisation des performances pour l'affichage de nombreux marqueurs sur la carte.</p>
-          
-          <a href="https://github.com/Gery-Charles/dev_durable" target="_blank" class="btn">Voir sur GitHub →</a>
         </div>
       </div>
     </section>
 
-    <!-- GitHub Stats -->
-    <section id="github" data-aos="fade-up">
-      <h2>Activité GitHub</h2>
-      <div class="github-stats">
-        <img src="https://github-readme-stats.vercel.app/api?username=Gery-Charles&show_icons=true&theme=tokyonight&hide_border=true&locale=fr" alt="Statistiques GitHub">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Gery-Charles&layout=compact&theme=tokyonight&hide_border=true&locale=fr" alt="Langages les plus utilisés">
-      </div>
-      <p style="text-align: center; margin-top: 1rem;">
-        <a href="https://github.com/Gery-Charles" target="_blank" style="color: var(--accent-color); font-weight: 600;">Voir mon profil GitHub complet →</a>
-      </p>
-    </section>
 
     <!-- Centres d'intérêt -->
     <section id="interests" data-aos="fade-left">
@@ -220,21 +217,20 @@
       <!-- Ajoutez votre CV ici -->
       <!-- <a href="CV_Gery_Charles.pdf" download class="cta-btn" style="margin-left: 1rem;">📄 Télécharger mon CV</a> -->
     </section>
-
-    <!-- Contact -->
-    <section id="contact" data-aos="fade-left">
-      <h2>Contact</h2>
-      <p>📧 Email : <a href="mailto:charles.gery@etudiant.univ-lr.fr">charles.gery@etudiant.univ-lr.fr</a></p>
-      <p>💼 LinkedIn : <a href="https://www.linkedin.com/in/charles-gery" target="_blank">Gery Charles</a></p>
-      <p>💻 GitHub : <a href="https://github.com/Gery-Charles" target="_blank">Gery-Charles</a></p>
-    </section>
   </main>
 
   <!-- Bouton scroll to top -->
   <button id="scroll-top" title="Retour en haut">↑</button>
 
   <footer>
+    <h2 id="contact">Contact</h2>
+    <div class="footer-content">
+      <div>
+        <p>💼 LinkedIn : <a href="https://www.linkedin.com/in/charles-gery" target="_blank">Gery Charles</a></p>
+        <p>💻 GitHub : <a href="https://github.com/Gery-Charles" target="_blank">Gery-Charles</a></p>
+    </div>
     <p>&copy; 2025 Gery Charles - Portfolio</p>
+    </div>
   </footer>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
