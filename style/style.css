@@ -154,7 +154,7 @@ section {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: var(--accent-color);
 }
 
 .timeline-item::after {
@@ -164,7 +164,7 @@ section {
   top: 12px;
   width: 2px;
   height: 100%;
-  background: #ddd;
+  background: var(--bg-color);
 }
 
 .timeline-item:last-child::after {
@@ -172,7 +172,7 @@ section {
 }
 
 .timeline-item h3 {
-  color: var(--accent-color);
+  color: var(--light-accent-color);
   margin-bottom: 0.3rem;
 }
 
@@ -191,7 +191,7 @@ section {
   display: inline-block;
   padding: 0.3rem 0.8rem;
   background: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--white);
   border-radius: 15px;
   font-size: 0.85rem;
 }
@@ -256,10 +256,10 @@ ul.skills li:hover {
 }
 
 .project-meta span {
-  background: var(--light-accent-color);
+  background: var(--accent-color);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
-  color: var(--text-color, var(--bg-color));
+  color: var(--bg-color);
   font-weight: 600;
 }
 
@@ -330,12 +330,13 @@ ul.skills li:hover {
   text-decoration: none;
   font-weight: 600;
   padding: 0.5rem 1.2rem;
+  margin-bottom: 2rem;
   border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: darken(var(--accent-color), 10%);
+  background-color: var(--primary-color);
 }
 
 footer {
@@ -514,8 +515,8 @@ footer {
 
 /* Thème sombre pour les projets */
 .dark-theme .project-meta span {
-  background: rgba(109, 40, 217, 0.3);
-  color: var(--accent-color);
+  background: var(--light-accent-color);
+  color: var(--bg-color);
 }
 
 /* Thème sombre pour le pied de page */
