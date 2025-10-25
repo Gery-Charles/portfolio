@@ -2,7 +2,7 @@
   --primary-color: #28464B;   /* Bleu foncé sophistiqué */
   --accent-color: #326771;   /* Bleu clair moderne */
   --light-accent-color: #2C8C99;   /* Bleu clair plus doux */
-  --bg-color: #D4D4D4;       /* Fond clair doux */
+  --bg-color: #c3c3c3;       /* Fond clair doux */
   --bg-color-dark: #2B2B2B;  /* Fond sombre */
   --text-color: #333;
   --white: #d7d7d7;
@@ -113,7 +113,7 @@ section {
   padding: 2rem;
   max-width: 900px;
   margin: 2rem auto;
-  background-color: var(--white);
+  background-color: #d5d5d5;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
@@ -488,7 +488,7 @@ footer {
 /* THÈME SOMBRE */
 .dark-theme {
   transition: 1s;
-  background-color: #1a1a1a;
+  background: linear-gradient(135deg, #233d41, var(--primary-color), var(--accent-color), #244449);
   color: #eee;
 }
 
@@ -586,4 +586,68 @@ footer {
   .timeline-item p {
     font-size: 0.9rem;
   }
+}
+
+/* Règles responsive */
+@media(min-width:720px) {
+    .hero-inner {
+        grid-template-columns: 140px 1fr;
+        gap: 1.5rem
+    }
+
+    .panel-grid {
+        grid-template-columns: 2fr 1fr;
+        align-items: start
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .nav-list {
+        display: flex
+    }
+
+    .burger {
+        display: none
+    }
+}
+
+@media(max-width:719px) {
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 64px;
+        right: 1rem;
+        background: var(--card);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        flex-direction: column
+    }
+
+    .nav-list.show {
+        display: flex
+    }
+
+    .burger {
+        display: block
+    }
+
+    .hero-photo {
+        width: 110px;
+        height: 110px
+    }
+
+    .project-card img {
+        height: 160px
+    }
+
+    .cta-inner {
+        align-items: stretch
+    }
 }
