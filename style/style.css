@@ -340,7 +340,7 @@ ul.skills li:hover {
 }
 
 footer {
-  background-color: var(--text-color);
+  background-color: #1a1a1a;
   color: #ccc;
   text-align: center;
   font-size: 0.9rem;
@@ -351,7 +351,6 @@ footer {
   text-align: left;
   justify-content: space-between;
   align-items: center;
-  margin: 0 20rem 0 20rem;
 }
 
 
@@ -534,60 +533,6 @@ footer {
   color: var(--bg-color);
 }
 
-/* Redimensionnement et ajustements pour les petits écrans */
-@media (max-width: 768px) {
-  .sticky-nav {
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .sticky-nav a {
-    font-size: 0.9rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  section {
-      padding: 1rem;
-  }
-
-  header h1 {
-      font-size: 2rem;
-  }
-
-  ul.skills li {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .timeline {
-    padding-left: 0; /* Supprimer le décalage */
-    margin-left: 0;
-  }
-
-  .timeline-item {
-    padding-left: 1rem; /* Petit retrait */
-  }
-
-
-  .timeline-item h3 {
-    font-size: 1.1rem;
-  }
-
-  .timeline-item p {
-    font-size: 0.9rem;
-  }
-}
-
 /* Règles responsive */
 @media(min-width:720px) {
     .hero-inner {
@@ -614,6 +559,10 @@ footer {
 
     .burger {
         display: none
+    }
+
+    .footer-content {
+        margin: 0 10rem 0 10rem;
     }
 }
 
@@ -649,5 +598,12 @@ footer {
 
     .cta-inner {
         align-items: stretch
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        margin: 0 2rem 0 2rem;
     }
 }
