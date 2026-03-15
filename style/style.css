@@ -36,22 +36,85 @@ header h1 {
 }
 
 /* Bouton thème */
-#theme-toggle {
-  padding: 0.5rem 1rem;
-  background-color: #ffffff55;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 1rem;
+/* From Uiverse.io by chase2k25 */ 
+/* Switch Container */
+.switch-container {
+  position: relative;
+  width: 150px;
+  height: 60px;
+  background: #d6d6d6;
+  border-radius: 50px;
+  box-shadow:
+    inset -8px -8px 16px #ffffff,
+    inset 8px 8px 16px #b0b0b0;
 }
 
-#theme-toggle:hover {
-  background-color: #ffffff88;
+/* Hidden Checkbox */
+.toggle-checkbox {
+  display: none;
+}
+
+/* Switch Label (Interactive Area) */
+.switch {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
+  border-radius: 50px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Toggle Button */
+/* From Uiverse.io by mobinkakei */ 
+.label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: #394a56;
+}
+
+.label-text {
+  margin-left: 16px;
+}
+
+.toggle {
+  isolation: isolate;
+  position: relative;
+  height: 30px;
+  width: 60px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: -8px -4px 8px 0px var(--primary-color),
+    8px 4px 12px 0px var(--light-accent-color),
+    4px 4px 4px 0px var(--light-accent-color) inset,
+    -4px -4px 4px 0px var(--white) inset;
+}
+
+.toggle-state {
+  display: none;
+}
+
+.indicator {
+  height: 100%;
+  width: 200%;
+  background: #ecf0f3;
+  border-radius: 15px;
+  transform: translate3d(-75%, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+  box-shadow: -8px -4px 8px 0px var(--primary-color),
+    8px 4px 12px 0px var(--light-accent-color);
+}
+
+.toggle-state:checked ~ .indicator {
+  transform: translate3d(25%, 0, 0);
 }
 
 h2 {
   position: relative;
-  display: inline-block;
+  display: inline-block;  
   padding-left: 0.5rem;
 }
 
@@ -115,7 +178,6 @@ section {
   margin: 2rem auto;
   background-color: #d5d5d5;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 /* Box apprentissage */
@@ -456,6 +518,8 @@ footer {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: all 0.3s;
   z-index: 1000;
+  align-items: center;
+  justify-content: center;
 }
 
 #scroll-top:hover {
@@ -483,6 +547,95 @@ footer {
   margin-top: 0.5rem;
   color: var(--text-color);
 }
+
+/* Me contacter section */
+/* From Uiverse.io by Yaya12085 */ 
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+}
+
+.form .group label {
+  font-size: 14px;
+  color: rgb(99, 102, 102);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  transition: all .3s ease;
+}
+
+.form .group input,
+.form .group textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  outline: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.form .group input:placeholder-shown+ label, .form .group textarea:placeholder-shown +label {
+  top: 10px;
+  background-color: transparent;
+}
+
+.form .group input:focus,
+.form .group textarea:focus {
+  border-color: #3366cc;
+}
+
+.form .group input:focus+ label, .form .group textarea:focus +label {
+  top: -10px;
+  left: 10px;
+  background-color: #fff;
+  color: #3366cc;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form .group textarea {
+  resize: none;
+  height: 100px;
+}
+
+.form button {
+  background-color: #3366cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #27408b;
+}
+
+
 
 /* THÈME SOMBRE */
 .dark-theme {
