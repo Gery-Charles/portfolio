@@ -1,65 +1,129 @@
-/* MODE CLAIR/SOMBRE */
-  const toggle = document.getElementById("toogle");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const savedTheme = localStorage.getItem("theme");
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+const toggle = document.getElementById('toggle');
+const body   = document.body;
 
-  function applyTheme(theme) {
-    document.body.classList.toggle("dark-theme", theme === "dark");
-    toggle.textContent = theme === "dark";
-  }
+// Restaurer préférence
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  body.classList.add('dark-theme');
+  if (toggle) toggle.checked = true;
+}
 
-  applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
-
-  toggle.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark-theme");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    toggle.textContent = isDark ;
-  });
-
-// Bouton scroll to top
-  const scrollTopBtn = document.getElementById('scroll-top');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollTopBtn.style.display = 'flex';
+if (toggle) {
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
     } else {
-      scrollTopBtn.style.display = 'none';
+      body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+}
+
+/* ============================================================
+   SCROLL TOP
+   ============================================================ */
+const scrollBtn = document.getElementById('scroll-top');
+
+window.addEventListener('scroll', () => {
+  if (scrollBtn) {
+    if (window.scrollY > 300) {
+      scrollBtn.style.display = 'flex';
+    } else {
+      scrollBtn.style.display = 'none';
+    }
+  }
+}, { passive: true });
+
+if (scrollBtn) {
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ============================================================
+   NAV ACTIVE HIGHLIGHT
+   ============================================================ */
+const sections = document.querySelectorAll('section[id], .cta-section[id]');
+const navLinks  = document.querySelectorAll('.sticky-nav a');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + entry.target.id) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
+
+sections.forEach(s => observer.observe(s));
+
+/* ============================================================
+   TOGGLE DÉTAILS PROJET
+   ============================================================ */
+function toggleProjectDetails(btn) {
+  const details = btn.nextElementSibling;
+  const isOpen  = details.classList.contains('expanded');
+
+  // Fermer tous les autres
+  document.querySelectorAll('.project-details.expanded').forEach(d => {
+    d.classList.remove('expanded');
+    if (d.previousElementSibling && d.previousElementSibling.classList.contains('toggle-details')) {
+      d.previousElementSibling.classList.remove('active');
+      d.previousElementSibling.textContent = d.previousElementSibling.textContent.replace('Fermer', 'En savoir plus');
     }
   });
 
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  document.querySelectorAll('.toggle-details.active').forEach(b => b.classList.remove('active'));
 
-// Smooth scroll pour la navigation
-  document.querySelectorAll('.sticky-nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-// Fonction pour gérer l'accordéon des projets
-function toggleProjectDetails(button) {
-  const project = button.closest('.project');
-  const details = project.querySelector('.project-details');
-  details.classList.toggle('expanded');
-  button.classList.toggle('active');
-  if (details.classList.contains('expanded')) {
-    button.childNodes[0].textContent = 'Voir moins';
-  } else {
-    button.childNodes[0].textContent = 'En savoir plus';
+  if (!isOpen) {
+    details.classList.add('expanded');
+    btn.classList.add('active');
   }
 }
 
-// Fonction pour envoyer un email via mailto depuis le mail form vers mon adresse
+/* ============================================================
+   FORMULAIRE CONTACT — MAILTO
+   ============================================================ */
 function sendEmail() {
-  const monMail = "charles.gery@etudiant.univ-lr.fr";
-  const subject = encodeURIComponent(document.getElementById("contact-subject").value || "Contact depuis le portfolio");
-  const body = encodeURIComponent(document.getElementById("contact-message").value || "");
-  window.location.href = `mailto:${monMail}?subject=${subject}&body=${body}`;
+  const subject = document.getElementById('contact-subject');
+  const message = document.getElementById('contact-message');
+  const btn     = document.getElementById('submitMessage');
+
+  if (!subject || !message) return;
+
+  const subjectVal = subject.value.trim();
+  const messageVal = message.value.trim();
+
+  if (!subjectVal || !messageVal) {
+    showFormFeedback(btn, '⚠ Veuillez remplir les deux champs', 'warn');
+    return;
+  }
+
+  const mailto = `mailto:charles.gery@etudiant.univ-lr.fr`
+    + `?subject=${encodeURIComponent(subjectVal)}`
+    + `&body=${encodeURIComponent(messageVal)}`;
+
+  window.location.href = mailto;
+
+  showFormFeedback(btn, '✓ Ouverture de votre messagerie…', 'success');
+  subject.value = '';
+  message.value = '';
+}
+
+function showFormFeedback(btn, text, type) {
+  const original = btn.textContent;
+  btn.textContent = text;
+  btn.style.background = type === 'success' ? '#2C8C99' : '#b45309';
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.style.background = '';
+  }, 3000);
 }
