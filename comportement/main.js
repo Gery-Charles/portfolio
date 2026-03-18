@@ -127,3 +127,33 @@ function showFormFeedback(btn, text, type) {
     btn.style.background = '';
   }, 3000);
 }
+
+/* ============================================================
+   REVEAL ANIMATIONS — IntersectionObserver natif (remplace AOS)
+   ============================================================ */
+(function () {
+  // On ne lance pas si l'utilisateur préfère moins d'animations
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if (!revealEls.length) return;
+
+  // Délai progressif pour les enfants d'une même grille
+  const grids = document.querySelectorAll('.projects-grid, .skills-grid, .interests');
+  grids.forEach(grid => {
+    grid.querySelectorAll('[data-reveal]').forEach((el, i) => {
+      el.style.transitionDelay = (i * 80) + 'ms';
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target); // déclenche une seule fois
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => io.observe(el));
+})();

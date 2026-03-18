@@ -14,7 +14,7 @@
   --shadow-hover:  0 10px 36px rgba(40,70,75,0.18);
   --radius:        14px;
   --radius-sm:     8px;
-  --font-display:  'Roboto', sans-serif;
+  --font-display:  'Zen Dots', sans-serif;
   --font-body:     'DM Sans', sans-serif;
   --t:             0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -602,4 +602,29 @@ footer p:last-child { font-size: 0.76rem; }
   .sticky-nav a { font-size: 0.76rem; padding: 0.32rem 0.55rem; }
   .interests { gap: 0.7rem; }
   .interest-item { padding: 0.75rem 0.95rem; min-width: 75px; }
+}
+
+/* ============================================================
+   ANIMATIONS REVEAL (remplace AOS — 0 Ko de JS externe)
+   ============================================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respecter la préférence "réduire les animations" */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .avatar-ring { animation: none; }
 }
