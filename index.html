@@ -23,6 +23,41 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Zen+Dots&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Zen+Dots&display=swap"></noscript>
   <script src="comportement/main.js" defer></script>
+
+  <!-- Intégration du JSON-LD dans le head -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "#moi",
+        "name": "Gery Charles",
+        "jobTitle": "Développeur Full-Stack",
+        "url": "https://votre-portfolio.com",
+        "sameAs": [
+          "https://github.com/votre-pseudo",
+          "https://linkedin.com/in/votre-profil"
+        ],
+        "knowsAbout": ["JavaScript", "TypeScript", "React", "Node.js", "AWS"],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Nom de votre École"
+        }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "Nom du Projet",
+        "description": "Plateforme SaaS de gestion de tâches utilisant Next.js et PostgreSQL.",
+        "codeRepository": "https://github.com/votre-pseudo/projet",
+        "programmingLanguage": ["TypeScript", "SQL"],
+        "runtimePlatform": "Vercel",
+        "author": { "@id": "#moi" },
+        "dateCreated": "2025-11-20"
+      }
+    ]
+  }
+  </script>   
 </head>
 
 <body>
