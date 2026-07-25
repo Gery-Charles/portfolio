@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gery-charles.github.io/portfolio/sitemap.xml
